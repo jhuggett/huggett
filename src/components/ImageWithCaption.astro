@@ -1,0 +1,18 @@
+---
+import { Image } from '@astrojs/image/components'
+
+export interface Props {
+	image: ImageMetadata;
+	caption: string
+}
+
+const { 
+	image,
+    caption
+} = Astro.props as Props;
+---
+
+<figure>
+    <Image src={image} alt={caption} format={'webp'} class="m-auto rounded" />
+    <figcaption class="m-auto text-primary text-sm border-t-4 px-2 border-accent pb-2 pt-1 w-fit">{ caption }</figcaption>
+</figure>
