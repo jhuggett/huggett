@@ -1,44 +1,44 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Post, Tag } from '../../post';
+import Layout from '../layouts/Layout.astro';
+import { Post, Tag } from '../post';
 
-import holdingTheInitalSteelOverAnvilImage from '../../assets/posts/the-belt-knife/holding-the-inital-steel-over-anvil.jpeg'
-import shotOfTheForgeImage from '../../assets/posts/the-belt-knife/shot-of-the-forge.jpeg'
-import tangForgedImage from '../../assets/posts/the-belt-knife/tang-forged.jpeg'
-import upCloseOfTangImage from '../../assets/posts/the-belt-knife/up-close-of-tang.jpeg'
-import knifeFreshFromTheForgeImage from '../../assets/posts/the-belt-knife/knife-fresh-from-the-forge.jpeg'
-import knifeAfterSomeFilingImage from '../../assets/posts/the-belt-knife/knife-after-some-filing.jpeg'
-import upCloseOfSandedTangImage from '../../assets/posts/the-belt-knife/up-close-of-sanded-tang.jpeg'
-import upCloseOfSandedMiddleImage from '../../assets/posts/the-belt-knife/up-close-of-sanded-middle.jpeg'
-import upCloseOfSandedTipImage from '../../assets/posts/the-belt-knife/up-close-of-sanded-tip.jpeg'
-import componentsImage from '../../assets/posts/the-belt-knife/components.jpeg'
-import knifeAfterQuenchingImage from '../../assets/posts/the-belt-knife/knife-after-quenching.jpeg'
-import temperedKnifeImage from '../../assets/posts/the-belt-knife/tempered-knife.jpeg'
-import cleanedUpAfterTemper from '../../assets/posts/the-belt-knife/cleaned-up-after-temper.jpeg'
-import assembledFacingLeftImage from '../../assets/posts/the-belt-knife/assembled-facing-left.jpeg'
-import assembledFacingRightImage from '../../assets/posts/the-belt-knife/assembled-facing-right.jpeg'
-import assembledTopDownImage from '../../assets/posts/the-belt-knife/assembled-top-down.jpeg'
-import assembledHeadOnImage from '../../assets/posts/the-belt-knife/assembled-head-on.jpeg'
-import roughedOutHandleImage from '../../assets/posts/the-belt-knife/roughed-out-handle.jpeg'
-import slightlyRefinedHandleImage from '../../assets/posts/the-belt-knife/slightly-refined-handle.jpeg'
-import furtherRefinedHandleImage from '../../assets/posts/the-belt-knife/further-refined-handle.jpeg'
-import refinedHandleImage from '../../assets/posts/the-belt-knife/refined-handle.jpeg'
-import torchedHandleImage from '../../assets/posts/the-belt-knife/torched-handle.jpeg'
-import burningTopUnfinishedImage from '../../assets/posts/the-belt-knife/burning-top-unfinished.jpeg'
-import burningTopFinishedImage from '../../assets/posts/the-belt-knife/burning-top-finished.jpeg'
-import burningFinishedImage from '../../assets/posts/the-belt-knife/burning-finished.jpeg'
-import finishedUpCloseOfHandleImage from '../../assets/posts/the-belt-knife/finished-up-close-of-handle.jpeg'
-import finishedFullViewImage from '../../assets/posts/the-belt-knife/finished-full-view.jpeg'
-import finishedLookingDownBladeImage from '../../assets/posts/the-belt-knife/finished-looking-down-blade.jpeg'
-import coverPhoto from '../../assets/posts/the-belt-knife/cover-photo.jpeg'
+import holdingTheInitalSteelOverAnvilImage from '../assets/posts/the-belt-knife/holding-the-inital-steel-over-anvil.jpeg'
+import shotOfTheForgeImage from '../assets/posts/the-belt-knife/shot-of-the-forge.jpeg'
+import tangForgedImage from '../assets/posts/the-belt-knife/tang-forged.jpeg'
+import upCloseOfTangImage from '../assets/posts/the-belt-knife/up-close-of-tang.jpeg'
+import knifeFreshFromTheForgeImage from '../assets/posts/the-belt-knife/knife-fresh-from-the-forge.jpeg'
+import knifeAfterSomeFilingImage from '../assets/posts/the-belt-knife/knife-after-some-filing.jpeg'
+import upCloseOfSandedTangImage from '../assets/posts/the-belt-knife/up-close-of-sanded-tang.jpeg'
+import upCloseOfSandedMiddleImage from '../assets/posts/the-belt-knife/up-close-of-sanded-middle.jpeg'
+import upCloseOfSandedTipImage from '../assets/posts/the-belt-knife/up-close-of-sanded-tip.jpeg'
+import componentsImage from '../assets/posts/the-belt-knife/components.jpeg'
+import knifeAfterQuenchingImage from '../assets/posts/the-belt-knife/knife-after-quenching.jpeg'
+import temperedKnifeImage from '../assets/posts/the-belt-knife/tempered-knife.jpeg'
+import cleanedUpAfterTemper from '../assets/posts/the-belt-knife/cleaned-up-after-temper.jpeg'
+import assembledFacingLeftImage from '../assets/posts/the-belt-knife/assembled-facing-left.jpeg'
+import assembledFacingRightImage from '../assets/posts/the-belt-knife/assembled-facing-right.jpeg'
+import assembledTopDownImage from '../assets/posts/the-belt-knife/assembled-top-down.jpeg'
+import assembledHeadOnImage from '../assets/posts/the-belt-knife/assembled-head-on.jpeg'
+import roughedOutHandleImage from '../assets/posts/the-belt-knife/roughed-out-handle.jpeg'
+import slightlyRefinedHandleImage from '../assets/posts/the-belt-knife/slightly-refined-handle.jpeg'
+import furtherRefinedHandleImage from '../assets/posts/the-belt-knife/further-refined-handle.jpeg'
+import refinedHandleImage from '../assets/posts/the-belt-knife/refined-handle.jpeg'
+import torchedHandleImage from '../assets/posts/the-belt-knife/torched-handle.jpeg'
+import burningTopUnfinishedImage from '../assets/posts/the-belt-knife/burning-top-unfinished.jpeg'
+import burningTopFinishedImage from '../assets/posts/the-belt-knife/burning-top-finished.jpeg'
+import burningFinishedImage from '../assets/posts/the-belt-knife/burning-finished.jpeg'
+import finishedUpCloseOfHandleImage from '../assets/posts/the-belt-knife/finished-up-close-of-handle.jpeg'
+import finishedFullViewImage from '../assets/posts/the-belt-knife/finished-full-view.jpeg'
+import finishedLookingDownBladeImage from '../assets/posts/the-belt-knife/finished-looking-down-blade.jpeg'
+import coverPhoto from '../assets/posts/the-belt-knife/cover-photo.jpeg'
 
-import PostWrapper from '../../components/PostWrapper.astro';
-import PostHeader from '../../components/PostHeader.astro';
-import BackToAllPostsButton from '../../components/BackToAllPostsButton.astro';
-import Paragraph from '../../components/Paragraph.astro';
-import ImageWithCaption from '../../components/ImageWithCaption.astro';
-import RowOfImages from '../../components/RowOfImages.astro';
-import Callout from '../../components/Callout.astro';
+import PostWrapper from '../components/PostWrapper.astro';
+import PostHeader from '../components/PostHeader.astro';
+import BackToAllPostsButton from '../components/BackToAllPostsButton.astro';
+import Paragraph from '../components/Paragraph.astro';
+import ImageWithCaption from '../components/ImageWithCaption.astro';
+import RowOfImages from '../components/RowOfImages.astro';
+import Callout from '../components/Callout.astro';
 
 export const post: Post = {
     name: 'the-belt-knife',

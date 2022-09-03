@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from '@astrojs/image/components'
 
-import { post as theForge } from './posts/the-forge.astro'
-import { post as theBeltKnife } from './posts/the-belt-knife.astro'
-import { post as agita } from './posts/agita.astro'
-import { post as makingCharcoal } from './posts/making-charcoal.astro'
-import { post as wroughtIronCandleHolder } from './posts/wrought-iron-candle-holder.astro'
+import { post as theForge } from './the-forge.astro'
+import { post as theBeltKnife } from './the-belt-knife.astro'
+import { post as agita } from './agita.astro'
+import { post as makingCharcoal } from './making-charcoal.astro'
+import { post as wroughtIronCandleHolder } from './wrought-iron-candle-holder.astro'
 
 import { Post } from '../post';
 
@@ -59,7 +59,7 @@ const myName = 'Joel Huggett'
 						<Image src={post.coverImage} alt={post.coverImageAlt} format={'jpeg'} class=" rounded-t-2xl  duration-700" />
 						<div class="flex flex-col items-center gap-4">
 							<h2 class="border-b-2 border-accent">
-							<a href={`/posts/${post.name}`} title={ `Read about ${post.title}` }>
+							<a href={`/${post.name}`} title={ `Read about ${post.title}` }>
 								{ post.title }
 							</a>
 							</h2>
