@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Picture } from '@astrojs/image/components'
 
 export interface Props {
 	image: ImageMetadata;
@@ -8,11 +8,12 @@ export interface Props {
 
 const { 
 	image,
-    caption
+    caption,
 } = Astro.props as Props;
 ---
 
 <figure>
-    <Image src={image} alt={caption} format={'webp'} class="m-auto rounded" />
+    <Picture sizes="(max-width: 1440px) 100vw, 1440px" src={image} widths={[1440, 720, 360, 180]} alt={caption} format={'webp'} 
+    class={`m-auto`} />
     <figcaption class="m-auto text-primary text-sm border-t-4 px-2 border-accent pb-2 pt-1 w-fit">{ caption }</figcaption>
 </figure>

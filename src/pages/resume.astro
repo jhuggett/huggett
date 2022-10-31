@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Post } from '../post';
+
+import homeScreenImage from '../assets/posts/agita/home-screen.webp'
+import statusImage from '../assets/posts/agita/status.webp'
+import selectiveAddingImage from '../assets/posts/agita/selective-adding.webp'
+import pushImage from '../assets/posts/agita/push.webp'
+import noRepositoryImage from '../assets/posts/agita/no-repository.webp'
+import coverPhoto from '../assets/posts/agita/cover-photo.png'
+
+import PostWrapper from '../components/PostWrapper.astro';
+import PostHeader from '../components/PostHeader.astro';
+import BackToAllPostsButton from '../components/BackToAllPostsButton.astro';
+import Paragraph from '../components/Paragraph.astro';
+import ImageWithCaption from '../components/ImageWithCaption.astro';
+import ExternalLink from '../components/ExternalLink.astro';
+import Tag from '../components/resume/Tag.astro';
+import Tags from '../components/resume/Tags.astro'
+import Company from '../components/resume/Company.astro';
+import Role from '../components/resume/Role.astro';
+import CompanyTitle from '../components/resume/CompanyTitle.astro';
+import CompanyDescription from '../components/resume/CompanyDescription.astro';
+---
+
+<Layout title="Resume" description="A resume of Joel Huggett" type={'website'} image={ coverPhoto }>
+	<PostWrapper>
+        <div class="flex flex-col gap-8">
+            <h1>Joel Huggett</h1>
+            <h2>2 years and 9 months of professional software engineering; 7+ years playing in code.
+            </h2>
+            <Company>
+                <CompanyTitle>Kanary</CompanyTitle>
+                <p class="text-center text-lg">7 months</p>
+                May 2, 2022 - November 4, 2022
+                <CompanyDescription>
+                    Working on <ExternalLink href={'https://www.thekanary.com/'}>Kanary</ExternalLink>, 
+                    a SaaS product for identifying and removing public personal data exposures.
+                </CompanyDescription>
+                <Tags>
+                    <Tag>Typescript</Tag>
+                    <Tag>React</Tag>
+                    <Tag>Tailwind</Tag>
+                    <Tag>Django</Tag>
+                    <Tag>Python</Tag>
+                    <Tag>Go</Tag>
+                </Tags>
+                <Role title="Software Engineer" started="May 2, 2022" />
+            </Company>
+            <Company>
+                <CompanyTitle>Forestry</CompanyTitle>
+                <p class="text-center  text-lg">2 years and 2 months</p>
+                <p>January 6, 2020 - March 22, 2022</p>
+                <CompanyDescription>
+                    Working on <ExternalLink href={'https://tina.io/'}>Tina</ExternalLink>, a git backed CMS for static sites.
+                </CompanyDescription>
+                <Tags>
+                    <Tag>Typescript</Tag>
+                    <Tag>React</Tag>
+                    <Tag>Nextjs</Tag>
+                    <Tag>Express</Tag>
+                    <Tag>Node</Tag>
+                    <Tag>Go</Tag>
+                    <Tag>AWS Lambda</Tag>
+                    <Tag>AWS Kenisis</Tag>
+                </Tags>
+                <Role title="Software Engineer II" started="Jan 21, 2022" />
+                <Role title="Software Engineer I (Junior)" started="Jan 8, 2020" />
+            </Company>
+        </div>
+    </PostWrapper>
+</Layout>
