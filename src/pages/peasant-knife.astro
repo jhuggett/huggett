@@ -55,6 +55,7 @@ import sketchKolrosingIdeasImage from '../assets/posts/peasant-knife/sketch-kolr
 
 import PostWrapper from '../components/PostWrapper.astro';
 import PostHeader from '../components/PostHeader.astro';
+import BackToAllPostsButton from '../components/BackToAllPostsButton.astro';
 import Paragraph from '../components/Paragraph.astro';
 import ImageWithCaption from '../components/ImageWithCaption.astro';
 import RowOfImages from '../components/RowOfImages.astro';
@@ -379,5 +380,6 @@ export const post: Post = {
         <ImageWithCaption image={finalProductWithOpinelImage} caption="The final product, next to an Opinel" />
         <ImageWithCaption image={finalProductImage} caption="The final product, open" />
 
+        <BackToAllPostsButton />
     </PostWrapper>
 </Layout>
