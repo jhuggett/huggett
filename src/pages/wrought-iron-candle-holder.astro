@@ -33,6 +33,7 @@ import ImageWithCaption from '../components/ImageWithCaption.astro';
 import RowOfImages from '../components/RowOfImages.astro';
 import Callout from '../components/Callout.astro';
 import ExternalLink from '../components/ExternalLink.astro';
+import PostFooter from '../components/PostFooter.astro';
 
 export const post: Post = {
     name: 'wrought-iron-candle-holder',
@@ -204,6 +205,6 @@ export const post: Post = {
             </Paragraph>
 
             <ImageWithCaption image={finalGloomyShot} caption="The final product" />
-        <BackToAllPostsButton />
+            <PostFooter post={post} />
     </PostWrapper>
 </Layout>

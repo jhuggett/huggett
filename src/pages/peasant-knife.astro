@@ -60,6 +60,7 @@ import Paragraph from '../components/Paragraph.astro';
 import ImageWithCaption from '../components/ImageWithCaption.astro';
 import RowOfImages from '../components/RowOfImages.astro';
 import Callout from '../components/Callout.astro';
+import PostFooter from '../components/PostFooter.astro';
 
 export const post: Post = {
     name: 'peasant-knife',
@@ -380,6 +381,6 @@ export const post: Post = {
         <ImageWithCaption image={finalProductWithOpinelImage} caption="The final product, next to an Opinel" />
         <ImageWithCaption image={finalProductImage} caption="The final product, open" />
 
-        <BackToAllPostsButton />
+        <PostFooter post={post} />
     </PostWrapper>
 </Layout>

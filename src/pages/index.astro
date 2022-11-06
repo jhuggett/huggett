@@ -2,28 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from '@astrojs/image/components'
 
-import { post as theForge } from './the-forge.astro'
-import { post as theBeltKnife } from './the-belt-knife.astro'
-import { post as agita } from './agita.astro'
-import { post as makingCharcoal } from './making-charcoal.astro'
-import { post as wroughtIronCandleHolder } from './wrought-iron-candle-holder.astro'
-import { post as theFrictionFolder } from './peasant-knife.astro'
+import touchmarkImage from '../assets/touchmark.png'
 
-import { Post } from '../post';
-
-const posts: Post[] = [
-	theFrictionFolder,
-	wroughtIronCandleHolder,
-	makingCharcoal,
-	agita,
-	theBeltKnife,
-	theForge
-]
+import { posts } from '../posts'
 
 const myName = 'Joel Huggett'
 ---
 
-<Layout title="Joel Huggett" description="About Joel Huggett." type={'website'} image={theForge.coverImage}>
+<Layout title="Joel Huggett" description="About Joel Huggett." type={'website'} image={touchmarkImage}>
 	<main class="">
 		<div class="min-h-screen bg-secondary text-primary flex flex-col gap-4 items-center justify-between">
 			<span class="flex flex-wrap gap-8 mt-12 mx-4 items-center justify-center sm:justify-start sm:pl-12 sm:w-full">

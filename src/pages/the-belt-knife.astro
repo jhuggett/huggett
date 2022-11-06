@@ -39,6 +39,7 @@ import Paragraph from '../components/Paragraph.astro';
 import ImageWithCaption from '../components/ImageWithCaption.astro';
 import RowOfImages from '../components/RowOfImages.astro';
 import Callout from '../components/Callout.astro';
+import PostFooter from '../components/PostFooter.astro';
 
 export const post: Post = {
     name: 'the-belt-knife',
@@ -53,6 +54,7 @@ export const post: Post = {
         Tag.Woodworking
     ]
 }
+
 ---
 
 <Layout title={ post.title } description={ post.description } type={'blog'} image={ post.coverImage }>
@@ -192,6 +194,8 @@ export const post: Post = {
             It isn't perfect; that would take all the fun away after all. 
             But it is a vast improvement over its predecessors.
         </Paragraph>
-        <BackToAllPostsButton />
+        
+        <PostFooter post={post} />
+
     </PostWrapper>
 </Layout>

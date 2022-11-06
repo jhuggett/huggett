@@ -14,6 +14,7 @@ import PostHeader from '../components/PostHeader.astro';
 import BackToAllPostsButton from '../components/BackToAllPostsButton.astro';
 import Paragraph from '../components/Paragraph.astro';
 import ImageWithCaption from '../components/ImageWithCaption.astro';
+import PostFooter from '../components/PostFooter.astro';
 
 export const post: Post = {
     name: 'agita',
@@ -65,6 +66,6 @@ export const post: Post = {
             Agita is open source, all the code is <a class="text-blue-500 hover:underline" href="https://github.com/jhuggett/agita" target="_blank" referrerpolicy="no-referrer">here</a>. 
             And is published to npm <a class="text-blue-500 hover:underline" href="https://www.npmjs.com/package/agita" target="_blank" referrerpolicy="no-referrer">here</a>.
         </Paragraph>
-        <BackToAllPostsButton />
+        <PostFooter post={post} />
     </PostWrapper>
 </Layout>
