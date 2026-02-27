@@ -1,12 +1,11 @@
 ---
-export interface Props {
-	href
+interface Props {
+  href: string;
 }
 
-const { 
-	href
-} = Astro.props as Props;
+const { href } = Astro.props;
 ---
-<a href={href} target="_blank" referrerpolicy="no-referrer" class="text-accent font-semibold border-b-2 border-accent border-dotted hover:border-solid">
-    <slot />
+
+<a href={href} target="_blank" referrerpolicy="no-referrer" class="external-link">
+  <slot />
 </a>

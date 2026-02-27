@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostHeader from '../../components/PostHeader.astro';
+import PostFooter from '../../components/PostFooter.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('posts')).sort((a, b) => a.data.order - b.data.order);
+  return posts.map((post, index) => {
+    const previousPost = posts[index - 1];
+    const nextPost = posts[index + 1];
+    return {
+      params: { slug: post.id },
+      props: {
+        post,
+        previousPost: previousPost ? { slug: previousPost.id, title: previousPost.data.title } : undefined,
+        nextPost: nextPost ? { slug: nextPost.id, title: nextPost.data.title } : undefined,
+      },
+    };
+  });
+}
+
+const { post, previousPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title} description={post.data.description} type="blog">
+  <main class="post-wrapper">
+    <article>
+      <PostHeader title={post.data.title} writtenOn={post.data.writtenOn} tags={post.data.tags} />
+      <Content />
+      <PostFooter previousPost={previousPost} nextPost={nextPost} />
+    </article>
+  </main>
+</Layout>

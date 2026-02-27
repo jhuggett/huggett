@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  slug: string;
+  coverImage: ImageMetadata;
+  coverImageAlt: string;
+  writtenOn: Date;
+  description: string;
+  tags: string[];
+}
+
+const { title, slug, coverImage, coverImageAlt, writtenOn, description, tags } = Astro.props;
+
+const formattedDate = writtenOn.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<li class="post-card">
+  <Image src={coverImage} alt={coverImageAlt} widths={[360, 720]} sizes="(max-width: 640px) 100vw, 28rem" />
+  <div class="post-card-body">
+    <h2>
+      <a href={`/posts/${slug}`} title={`Read about ${title}`}>
+        {title}
+      </a>
+    </h2>
+    <small>{formattedDate}</small>
+    <p>{description}</p>
+    <ul class="tags-list">
+      {tags.map(tag => (
+        <li class="tag">{tag}</li>
+      ))}
+    </ul>
+  </div>
+</li>

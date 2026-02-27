@@ -1,18 +1,22 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
+  "name": "huggett",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/react": "^4.4.2",
+    "astro": "^5.18.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.3.4",
-    "@astrojs/tailwind": "^1.0.0",
-    "astro": "^1.0.6"
-  },
-  "dependencies": {}
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
 }

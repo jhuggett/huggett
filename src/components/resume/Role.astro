@@ -1,16 +1,13 @@
 ---
-export interface Props {
-	title: string,
-    started: string
+interface Props {
+  title: string;
+  started: string;
 }
 
-const { 
-	started,
-    title
-} = Astro.props as Props;
+const { title, started } = Astro.props;
 ---
 
-<div class="p-4 border-t-2 border-accent w-fit">
-    <small>{ started }</small>
-    <h2>{ title }</h2>
+<div class="role">
+  <small>{started}</small>
+  <h2>{title}</h2>
 </div>
