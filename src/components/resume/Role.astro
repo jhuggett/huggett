@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+  started: string;
+}
+
+const { title, started } = Astro.props;
+---
+
+<div class="role">
+  <small>{started}</small>
+  <h2>{title}</h2>
+</div>
