@@ -9,9 +9,10 @@ interface Props {
   writtenOn: Date;
   description: string;
   tags: string[];
+  index?: number;
 }
 
-const { title, slug, coverImage, coverImageAlt, writtenOn, description, tags } = Astro.props;
+const { title, slug, coverImage, coverImageAlt, writtenOn, description, tags, index = 0 } = Astro.props;
 
 const formattedDate = writtenOn.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -20,7 +21,7 @@ const formattedDate = writtenOn.toLocaleDateString('en-US', {
 });
 ---
 
-<li class="post-card">
+<li class="post-card" style={`--i: ${index}`}>
   <Image src={coverImage} alt={coverImageAlt} widths={[360, 720]} sizes="(max-width: 640px) 100vw, 28rem" />
   <div class="post-card-body">
     <h2>

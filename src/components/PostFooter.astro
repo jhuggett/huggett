@@ -7,26 +7,23 @@ interface Props {
 const { previousPost, nextPost } = Astro.props;
 ---
 
-<span class="post-footer">
-  <span class="post-footer-nav">
-    {previousPost && (
-      <a href={`/posts/${previousPost.slug}`}>
-        <svg style="width:1.5rem;" class="fill-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-        {previousPost.title}
+<footer class="post-footer">
+  <nav class="post-footer-nav">
+    {previousPost ? (
+      <a href={`/posts/${previousPost.slug}`} class="post-footer-link post-footer-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        <span>{previousPost.title}</span>
       </a>
-    )}
-    {nextPost && (
-      <a href={`/posts/${nextPost.slug}`}>
-        {nextPost.title}
-        <svg style="width:1.5rem;" class="fill-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+    ) : <span />}
+    {nextPost ? (
+      <a href={`/posts/${nextPost.slug}`} class="post-footer-link post-footer-next">
+        <span>{nextPost.title}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
       </a>
-    )}
-  </span>
-  <a href="/blog" class="back-link" style="margin: 2rem auto;">
-    <svg style="width:1.5rem;" class="fill-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 278.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192zm384-192l-192 192c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 470.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg>
+    ) : <span />}
+  </nav>
+  <a href="/blog" class="post-footer-all">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
     All posts
   </a>
-  <a class="contact-link" style="font-size:0.875rem; margin:0 auto;" href="https://us17.list-manage.com/contact-form?u=f218f35ce805f339f1023aaa6&form_id=03a0fc62d63083aa503eb333cec0f1cf" target="_blank" referrerpolicy="no-referrer">
-    Have something to say or just want to get notified about new posts? Reach out!
-  </a>
-</span>
+</footer>

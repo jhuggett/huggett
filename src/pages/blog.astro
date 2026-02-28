@@ -12,8 +12,9 @@ const posts = (await getCollection('posts')).sort((a, b) => a.data.order - b.dat
   <main>
     <div class="posts-section">
       <ul class="posts-grid">
-        {posts.map(post => (
+        {posts.map((post, i) => (
           <PostCard
+            index={i}
             title={post.data.title}
             slug={post.id}
             coverImage={post.data.coverImage}
@@ -24,9 +25,6 @@ const posts = (await getCollection('posts')).sort((a, b) => a.data.order - b.dat
           />
         ))}
       </ul>
-      <a class="contact-link" href="https://us17.list-manage.com/contact-form?u=f218f35ce805f339f1023aaa6&form_id=03a0fc62d63083aa503eb333cec0f1cf" target="_blank" referrerpolicy="no-referrer">
-        Have something to say or just want to get notified about new posts? Reach out!
-      </a>
     </div>
   </main>
 </Layout>
