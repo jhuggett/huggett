@@ -76,10 +76,9 @@ import SocialLinks from '../components/SocialLinks.astro';
     }
   }
 
-  /* Tilt target */
-  #hero-identity {
-    will-change: transform;
-    transform-style: preserve-3d;
+  /* Tilt target (touchmark only) */
+  .touchmark-glow {
+    will-change: transform, filter;
   }
 
   /* Accessibility */
@@ -91,7 +90,7 @@ import SocialLinks from '../components/SocialLinks.astro';
     #ember-canvas {
       display: none;
     }
-    #hero-identity {
+    .touchmark-glow {
       will-change: auto;
     }
   }
