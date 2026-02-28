@@ -179,6 +179,8 @@ ul, li {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-spacer {
@@ -202,7 +204,7 @@ ul, li {
   font-size: clamp(0.65rem, 1.5vw, 0.8rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  opacity: 0.5;
+  color: rgba(var(--color-primary), 0.5);
   margin: 0;
   text-align: center;
 }
