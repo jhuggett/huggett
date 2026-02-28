@@ -1,56 +1,108 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import ExternalLink from '../components/ExternalLink.astro';
-import Company from '../components/resume/Company.astro';
-import Role from '../components/resume/Role.astro';
 import Tag from '../components/resume/Tag.astro';
 ---
 
 <Layout title="Resume" description="A resume of Joel Huggett">
-  <main class="post-wrapper">
-    <article>
-      <div class="resume-wrapper">
-        <h1>Joel Huggett</h1>
-        <h2>2 years and 9 months of professional software engineering; 7+ years playing in code.</h2>
-        <Company>
-          <h2 class="company-title">Kanary</h2>
-          <p style="text-align:center; font-size:1.125rem;">7 months</p>
-          <p>May 2, 2022 - November 4, 2022</p>
-          <p>
-            Working on <ExternalLink href="https://www.thekanary.com/">Kanary</ExternalLink>,
-            a SaaS product for identifying and removing public personal data exposures.
-          </p>
-          <ul class="resume-tags">
-            <Tag>Typescript</Tag>
-            <Tag>React</Tag>
-            <Tag>Tailwind</Tag>
-            <Tag>Django</Tag>
-            <Tag>Python</Tag>
-            <Tag>Go</Tag>
-          </ul>
-          <Role title="Software Engineer" started="May 2, 2022" />
-        </Company>
-        <Company>
-          <h2 class="company-title">Forestry</h2>
-          <p style="text-align:center; font-size:1.125rem;">2 years and 2 months</p>
-          <p>January 6, 2020 - March 22, 2022</p>
-          <p>
-            Working on <ExternalLink href="https://tina.io/">Tina</ExternalLink>, a git backed CMS for static sites.
-          </p>
-          <ul class="resume-tags">
-            <Tag>Typescript</Tag>
-            <Tag>React</Tag>
-            <Tag>Nextjs</Tag>
-            <Tag>Express</Tag>
-            <Tag>Node</Tag>
-            <Tag>Go</Tag>
-            <Tag>AWS Lambda</Tag>
-            <Tag>AWS Kenisis</Tag>
-          </ul>
-          <Role title="Software Engineer II" started="Jan 21, 2022" />
-          <Role title="Software Engineer I (Junior)" started="Jan 8, 2020" />
-        </Company>
-      </div>
-    </article>
+  <PageHeader title="Resume" />
+  <main class="resume-page">
+    <section class="resume-timeline">
+      <article class="resume-company">
+        <div class="resume-company-header">
+          <h2>Impilo</h2>
+          <span class="resume-dates">Jan 2025 &ndash; Present</span>
+        </div>
+        <div class="resume-roles">
+          <div class="resume-role">
+            <h3>Software Engineer</h3>
+            <small>Remote</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="resume-company">
+        <div class="resume-company-header">
+          <h2>UP360</h2>
+          <span class="resume-dates">Dec 2022 &ndash; Jan 2025 &middot; 2 yrs 2 mos</span>
+        </div>
+        <p class="resume-description">
+          Helped build the ILP (Immersive Learning Platform) which manages the distribution of educational VR content across devices on standalone VR headsets and PC VR.
+        </p>
+        <p class="resume-description">
+          Worked mostly on the device management side&mdash;remote managing device state, reconciling desired states, and reporting&mdash;but also worked across the full stack: backends in Rails and Go, a React/TypeScript/Tailwind web app, desktop launchers in Tauri and Wails, an Android foreground service in Kotlin, and shared on-device libraries in Go.
+        </p>
+        <div class="resume-roles">
+          <div class="resume-role">
+            <h3>Intermediate Full Stack Developer</h3>
+          </div>
+        </div>
+        <ul class="resume-tags">
+          <Tag>Go</Tag>
+          <Tag>TypeScript</Tag>
+          <Tag>React</Tag>
+          <Tag>Tailwind</Tag>
+          <Tag>Rails</Tag>
+          <Tag>Kotlin</Tag>
+          <Tag>Tauri</Tag>
+          <Tag>Wails</Tag>
+          <Tag>Android</Tag>
+          <Tag>VR</Tag>
+        </ul>
+      </article>
+
+      <article class="resume-company">
+        <div class="resume-company-header">
+          <h2>Kanary</h2>
+          <span class="resume-dates">May 2022 &ndash; Nov 2022 &middot; 7 mos</span>
+        </div>
+        <p class="resume-description">
+          Helped build <ExternalLink href="https://www.thekanary.com/">Kanary</ExternalLink>,
+          a SaaS product that automates scanning and removing personal information from data brokers.
+          Worked in a fullstack capacity with ownership of the frontend (a CRA served by Django).
+          Small team&mdash;wore many hats from planning to implementing to conducting interviews.
+        </p>
+        <div class="resume-roles">
+          <div class="resume-role">
+            <h3>Software Engineer</h3>
+          </div>
+        </div>
+        <ul class="resume-tags">
+          <Tag>TypeScript</Tag>
+          <Tag>React</Tag>
+          <Tag>Tailwind</Tag>
+          <Tag>Django</Tag>
+          <Tag>Python</Tag>
+          <Tag>Go</Tag>
+        </ul>
+      </article>
+
+      <article class="resume-company">
+        <div class="resume-company-header">
+          <h2>Forestry.io</h2>
+          <span class="resume-dates">Jan 2020 &ndash; Mar 2022 &middot; 2 yrs 3 mos</span>
+        </div>
+        <p class="resume-description">
+          Helped build <ExternalLink href="https://tina.io/">Tina</ExternalLink>, a git-backed headless content management system.
+          Worked on both the open-source and closed-source teams, involved across the full stack&mdash;from the CMS libraries, CRA and Next.js sites, to the AWS Lambda backend in Koa (Express) and Go.
+        </p>
+        <div class="resume-roles">
+          <div class="resume-role">
+            <h3>Junior Software Engineer</h3>
+          </div>
+        </div>
+        <ul class="resume-tags">
+          <Tag>TypeScript</Tag>
+          <Tag>React</Tag>
+          <Tag>Next.js</Tag>
+          <Tag>Express</Tag>
+          <Tag>Node</Tag>
+          <Tag>Go</Tag>
+          <Tag>AWS Lambda</Tag>
+          <Tag>AWS Kinesis</Tag>
+        </ul>
+      </article>
+    </section>
   </main>
 </Layout>

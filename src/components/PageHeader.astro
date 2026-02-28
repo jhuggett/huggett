@@ -1,0 +1,27 @@
+---
+import Touchmark from './Touchmark.astro';
+
+interface Props {
+  title: string;
+  showNav?: boolean;
+}
+
+const { title, showNav = false } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<header class="page-header">
+  <div class="page-header-left">
+    <a href="/" class="page-header-logo" aria-label="Home">
+      <Touchmark class="page-header-touchmark" transition:name="touchmark" />
+    </a>
+    <h1>{title}</h1>
+  </div>
+  {showNav && (
+    <nav class="page-header-nav">
+      <a href="/blog" class:list={{ active: currentPath.startsWith('/blog') || currentPath.startsWith('/posts') }}>Blog</a>
+      <a href="/games" class:list={{ active: currentPath.startsWith('/games') }}>Games</a>
+      <a href="/apps" class:list={{ active: currentPath.startsWith('/apps') }}>Apps</a>
+    </nav>
+  )}
+</header>
