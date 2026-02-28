@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Blog - Joel Huggett" description="Blog posts by Joel Huggett.">
+  <PageHeader title="Blog" showNav />
+  <main>
+    <div class="posts-section">
+      <ul class="posts-grid">
+        {posts.map(post => (
+          <PostCard
+            title={post.data.title}
+            slug={post.id}
+            coverImage={post.data.coverImage}
+            coverImageAlt={post.data.coverImageAlt}
+            writtenOn={post.data.writtenOn}
+            description={post.data.description}
+            tags={post.data.tags}
+          />
+        ))}
+      </ul>
+      <a class="contact-link" href="https://us17.list-manage.com/contact-form?u=f218f35ce805f339f1023aaa6&form_id=03a0fc62d63083aa503eb333cec0f1cf" target="_blank" referrerpolicy="no-referrer">
+        Have something to say or just want to get notified about new posts? Reach out!
+      </a>
+    </div>
+  </main>
+</Layout>
