@@ -22,7 +22,7 @@ const formattedDate = writtenOn.toLocaleDateString('en-US', {
 ---
 
 <li class="post-card" style={`--i: ${index}`}>
-  <Image src={coverImage} alt={coverImageAlt} widths={[360, 720]} sizes="(max-width: 640px) 100vw, 28rem" />
+  <div class="post-card-media"><Image src={coverImage} alt={coverImageAlt} widths={[360, 720]} sizes="(max-width: 640px) 100vw, 28rem" /></div>
   <div class="post-card-body">
     <h2>
       <a href={`/posts/${slug}`} title={`Read about ${title}`}>

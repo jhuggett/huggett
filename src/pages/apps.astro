@@ -9,7 +9,7 @@ import PageHeader from '../components/PageHeader.astro';
     <div class="posts-section">
       <ul class="posts-grid">
         <li class="game-card" style="--i: 0">
-          <img src="/agita.png" alt="Agita terminal UI" />
+          <div class="game-card-media"><img src="/agita-screenshot.png" alt="Agita terminal UI" /></div>
           <div class="game-card-body">
             <h2>
               <a href="/apps/agita">Agita</a>
@@ -24,6 +24,7 @@ import PageHeader from '../components/PageHeader.astro';
           </div>
         </li>
         <li class="game-card" style="--i: 1">
+          <div class="game-card-media"><img src="/mkm-screenshot.png" alt="MakeMe terminal UI" /></div>
           <div class="game-card-body">
             <h2>
               <a href="/apps/mkm">MakeMe (mkm)</a>
@@ -38,16 +39,32 @@ import PageHeader from '../components/PageHeader.astro';
           </div>
         </li>
         <li class="game-card" style="--i: 2">
+          <div class="game-card-media"><img src="/ocean-canine-screenshot.png" alt="Ocean Canine Bluetooth controller" /></div>
           <div class="game-card-body">
             <h2>
               <a href="/apps/ocean-canine">Ocean Canine</a>
             </h2>
-            <p class="game-card-genre">Bluetooth Controller</p>
-            <p>A web-based Bluetooth controller for managing various Bluetooth devices.</p>
+            <p class="game-card-genre">PWA &bull; Bluetooth Controller</p>
+            <p>A progressive web app for managing various Bluetooth devices.</p>
             <ul class="tags-list">
               <li class="tag">React</li>
               <li class="tag">TypeScript</li>
               <li class="tag">Bluetooth</li>
+            </ul>
+          </div>
+        </li>
+        <li class="game-card" style="--i: 3">
+          <div class="game-card-media"><img src="/noteworthy-screenshot.png" alt="Noteworthy terminal UI" /></div>
+          <div class="game-card-body">
+            <h2>
+              <a href="/apps/noteworthy">Noteworthy</a>
+            </h2>
+            <p class="game-card-genre">Terminal Sticky Notes</p>
+            <p>A sticky note app for your terminal. Create and manage notes right from the command line.</p>
+            <ul class="tags-list">
+              <li class="tag">TypeScript</li>
+              <li class="tag">Bun</li>
+              <li class="tag">TUI</li>
             </ul>
           </div>
         </li>
