@@ -5,7 +5,53 @@ import PageHeader from '../components/PageHeader.astro';
 
 <Layout title="Apps - Joel Huggett" description="Apps built by Joel Huggett.">
   <PageHeader title="Apps" showNav />
-  <main class="coming-soon-wrapper">
-    <p>Coming soon.</p>
+  <main>
+    <div class="posts-section">
+      <ul class="posts-grid">
+        <li class="game-card" style="--i: 0">
+          <img src="/agita.png" alt="Agita terminal UI" />
+          <div class="game-card-body">
+            <h2>
+              <a href="/apps/agita">Agita</a>
+            </h2>
+            <p class="game-card-genre">Git TUI</p>
+            <p>A terminal UI for streamlining your Git workflow. Stop re-typing the same commands — just select them.</p>
+            <ul class="tags-list">
+              <li class="tag">Node.js</li>
+              <li class="tag">CLI</li>
+              <li class="tag">Git</li>
+            </ul>
+          </div>
+        </li>
+        <li class="game-card" style="--i: 1">
+          <div class="game-card-body">
+            <h2>
+              <a href="/apps/mkm">MakeMe (mkm)</a>
+            </h2>
+            <p class="game-card-genre">Makefile TUI</p>
+            <p>Recursively finds Makefiles and presents targets in a filterable list for easy discovery and execution.</p>
+            <ul class="tags-list">
+              <li class="tag">Go</li>
+              <li class="tag">CLI</li>
+              <li class="tag">Make</li>
+            </ul>
+          </div>
+        </li>
+        <li class="game-card" style="--i: 2">
+          <div class="game-card-body">
+            <h2>
+              <a href="/apps/ocean-canine">Ocean Canine</a>
+            </h2>
+            <p class="game-card-genre">Bluetooth Controller</p>
+            <p>A web-based Bluetooth controller for managing various Bluetooth devices.</p>
+            <ul class="tags-list">
+              <li class="tag">React</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">Bluetooth</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
   </main>
 </Layout>

@@ -311,6 +311,7 @@ ul, li {
   border-radius: 0.75rem;
   border: 1px solid rgba(var(--color-primary), 0.06);
   animation: card-enter 0.5s ease-out backwards;
+  animation-delay: calc(var(--i, 0) * 0.1s);
 }
 
 .game-card a::after {
@@ -425,6 +426,30 @@ ul, li {
 .game-link:hover {
   color: rgb(var(--color-accent));
   border-color: rgba(var(--color-accent), 0.4);
+}
+
+/* App/game detail page image */
+.game-detail-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Install command */
+.app-install-cmd {
+  background-color: rgba(var(--color-primary), 0.06);
+  border: 1px solid rgba(var(--color-primary), 0.1);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 1rem;
+  overflow-x: auto;
+}
+
+.app-install-cmd code {
+  color: rgb(var(--color-primary));
+  font-size: 0.9rem;
 }
 
 /* Posts section */
