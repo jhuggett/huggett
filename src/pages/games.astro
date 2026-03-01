@@ -5,7 +5,26 @@ import PageHeader from '../components/PageHeader.astro';
 
 <Layout title="Games - Joel Huggett" description="Games made by Joel Huggett.">
   <PageHeader title="Games" showNav />
-  <main class="coming-soon-wrapper">
-    <p>Coming soon.</p>
+  <main>
+    <div class="posts-section">
+      <ul class="posts-grid">
+        <li class="game-card">
+          <img src="/quest-ever-burning-lamp.png" alt="Quest for the Ever-Burning Lamp gameplay screenshot" />
+          <div class="game-card-body">
+            <h2>
+              <a href="/games/quest-for-the-ever-burning-lamp">Quest for the Ever-Burning Lamp</a>
+            </h2>
+            <p class="game-card-genre">Terminal Adventure</p>
+            <p>A roguelike adventure game that runs entirely in the terminal. Navigate procedurally generated dungeons and search for the legendary Ever-Burning Lamp.</p>
+            <ul class="tags-list">
+              <li class="tag">TypeScript</li>
+              <li class="tag">Bun</li>
+              <li class="tag">Terminal</li>
+              <li class="tag">Roguelike</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
   </main>
 </Layout>
