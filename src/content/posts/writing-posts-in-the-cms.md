@@ -1,11 +1,12 @@
 ---
-title: "Writing Posts in the CMS"
-description: "A sample Markdown post showing what the CMS editor can produce."
-writtenOn: "2026-08-26"
-coverImage: "src/assets/posts/the-forge/cover-photo.jpeg"
-coverImageAlt: "The forge"
-tags: ["coding"]
+coverImage: src/assets/posts/the-forge/cover-photo.jpeg
+coverImageAlt: The forge
+description: A sample Markdown post showing what the CMS editor can produce.
 draft: true
+tags:
+  - coding
+title: Writing Posts in the CMS
+writtenOn: "2026-08-26"
 ---
 
 Posts written in the CMS are plain Markdown. Paragraphs, headings, lists, links and blockquotes all render with the same styling as the older MDX posts.
