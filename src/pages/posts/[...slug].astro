@@ -3,10 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import PostHeader from '../../components/PostHeader.astro';
 import PostFooter from '../../components/PostFooter.astro';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
+import { getPosts } from '../../lib/posts';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('posts')).sort((a, b) => a.data.order - b.data.order);
+  const posts = await getPosts();
   return posts.map((post, index) => {
     const previousPost = posts[index - 1];
     const nextPost = posts[index + 1];
@@ -35,7 +36,9 @@ const { Content } = await render(post);
       </a>
       <h1 class="post-title">{post.data.title}</h1>
       <PostHeader writtenOn={post.data.writtenOn} tags={post.data.tags} />
-      <Content />
+      <div class="post-body">
+        <Content />
+      </div>
       <PostFooter previousPost={previousPost} nextPost={nextPost} />
     </article>
   </main>

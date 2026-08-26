@@ -1,0 +1,97 @@
+# Go Git CMS content model — https://docs.gogitcms.com/reference/schema
+#
+# Two collections point at the same directory:
+#   posts      — Markdown posts (*.md). Fully editable, including the body.
+#   posts-mdx  — the original MDX posts. Their bodies are Astro components, which
+#                the CMS body editor can't render, so only the front-matter is
+#                editable and new entries can't be created here.
+version: 1
+
+media:
+  - name: post-images
+    path: "src/assets/posts/**/*.{jpeg,jpg,png,webp,gif}"
+    mime_types: ["image/*"]
+    # No public_base: these live under src/ so Astro can optimise them, and are
+    # referenced by repository path (src/assets/posts/…) — see src/content.config.ts.
+
+content_models:
+  - name: posts
+    path: "src/content/posts/*.md"
+    label: "{{title}}"
+    filename: "{{slugify title}}"
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: true
+        display: { component: textarea }
+      - name: writtenOn
+        label: Written on
+        type: string
+        required: true
+        display: { component: date }
+      - name: lastUpdatedOn
+        label: Last updated on
+        type: string
+        display: { component: date }
+      - name: coverImage
+        label: Cover image
+        type: string
+        required: true
+        display: { component: media, media: post-images, store_as: repo }
+      - name: coverImageAlt
+        label: Cover image alt text
+        type: string
+        required: true
+      - name: tags
+        # One of: blacksmithing, coding, woodworking (enforced by src/content.config.ts at build).
+        type: array
+        of: string
+        display: { component: list }
+      - name: draft
+        type: boolean
+        display: { component: switch }
+      - name: body
+        type: string
+        display: { component: body, source: body, format: markdown, flavor: gfm }
+
+  - name: posts-mdx
+    path: "src/content/posts/*.mdx"
+    label: "{{title}} (mdx)"
+    create: false
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: true
+        display: { component: textarea }
+      - name: writtenOn
+        label: Written on
+        type: string
+        required: true
+        display: { component: date }
+      - name: lastUpdatedOn
+        label: Last updated on
+        type: string
+        display: { component: date }
+      - name: coverImage
+        label: Cover image
+        type: string
+        required: true
+        display: { component: media, media: post-images, store_as: repo }
+      - name: coverImageAlt
+        label: Cover image alt text
+        type: string
+        required: true
+      - name: tags
+        # One of: blacksmithing, coding, woodworking (enforced by src/content.config.ts at build).
+        type: array
+        of: string
+        display: { component: list }
+      - name: draft
+        type: boolean
+        display: { component: switch }

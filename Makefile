@@ -18,3 +18,6 @@ clean:
 reinstall: clean install
 
 # example change
+# Go Git CMS — edit posts locally in the CMS editor (no account needed).
+cms:
+	npx @go-git-cms/gitcms-ide dev --local
